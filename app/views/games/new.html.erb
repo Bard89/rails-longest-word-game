@@ -1,0 +1,12 @@
+<h1>In which view are we?: new</h1>
+<h1>New game</h1>
+<p> The random 10 letter sequence is: <%= @letters%></p>
+
+<!-- form so that the user can fill a suggestion and submit it. -->
+<!-- action needs the path to the where it ahould display the results ASIO-->
+<form action="/score" method="post" id="form">
+  <input type="text" name="guess" placeholder="This is just a placeholder."
+   value="<%= @guess_query%>" >
+  <input type="submit" value="Guess!">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
